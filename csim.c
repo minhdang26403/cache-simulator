@@ -1,4 +1,3 @@
-#include "cachelab.h"
 #include <stdbool.h>
 #include <unistd.h>
 #include <getopt.h>
@@ -37,6 +36,10 @@ void printUsageInfo(char *argv[]) {
     printf("Examples:\n");
     printf("  linux> %s -s 4 -E 1 -b 4 -t traces/yi.trace\n", argv[0]);
     printf("  linux> %s -v -s 8 -E 2 -b 4 -t traces/yi.trace\n", argv[0]);
+}
+
+void printSummary(int hits, int misses, int evictions) {
+    printf("hits:%d misses:%d evictions:%d\n", hits, misses, evictions);
 }
 
 cache_line *initCache() {
